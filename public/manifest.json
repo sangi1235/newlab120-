@@ -1,0 +1,22 @@
+{
+  "short_name": "Ethereal",
+  "name": "Ethereal Elegance Wedding Attire 2025",
+  "description": "Trendsetting Wedding Attire and Virtual Try-On",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#f9b8c8",
+  "display": "standalone",
+  "orientation": "portrait"
+}
