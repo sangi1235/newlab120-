@@ -7,8 +7,9 @@ export const Footer: React.FC = () => {
 
   return (
     <footer
+      className="glass-card glass-footer"
       style={{
-        backgroundColor: 'var(--bg-surface)',
+        backgroundColor: 'var(--bg-glass)',
         borderTop: '1px solid var(--border-color)',
         padding: '60px 24px 30px',
         color: 'var(--text-main)',

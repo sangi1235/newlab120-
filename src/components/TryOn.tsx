@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
-import { products, Product } from '../data/products';
+import { products } from '../data/products';
 import { 
   Sparkles, 
   RotateCcw, 
@@ -10,7 +10,6 @@ import {
   ZoomIn, 
   ZoomOut, 
   Move,
-  RefreshCw,
   Plus,
   Minus
 } from 'lucide-react';
@@ -543,8 +542,6 @@ export const TryOn: React.FC = () => {
               <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)' }}>Select Fabric Color:</span>
               <div style={{ display: 'flex', gap: '10px' }}>
                 {Object.keys(colorMap).map(col => {
-                  const mapData = colorMap[col];
-                  const isSelectable = col === selectedProduct.color; // highlight base color or allow preview customization
                   return (
                     <button
                       key={col}

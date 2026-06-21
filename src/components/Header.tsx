@@ -9,7 +9,6 @@ import {
   Search, 
   Menu, 
   X, 
-  Sparkles,
   Scissors
 } from 'lucide-react';
 
@@ -49,14 +48,14 @@ export const Header: React.FC = () => {
   return (
     <>
       <header
-        className="glass-panel"
+        className="glass-panel glass-header"
         style={{
           position: 'sticky',
           top: 0,
           zIndex: 1000,
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'between',
+          justifyContent: 'space-between',
           padding: '16px 24px',
           borderBottom: '1px solid var(--border-color)',
           transition: 'all var(--transition-fast)'
@@ -306,18 +305,21 @@ export const Header: React.FC = () => {
         <div
           style={{
             position: 'fixed',
-            top: '73px',
+            top: '72px',
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'var(--bg-surface)',
+            background: 'var(--bg-glass)',
+            backdropFilter: 'blur(24px) saturate(160%)',
+            WebkitBackdropFilter: 'blur(24px) saturate(160%)',
             zIndex: 998,
             padding: '24px',
             display: 'flex',
             flexDirection: 'column',
             gap: '24px',
             animation: 'fadeIn var(--transition-fast)',
-            borderBottom: '1px solid var(--border-color)'
+            borderBottom: '1px solid var(--border-color)',
+            boxShadow: '0 30px 60px rgba(24, 17, 19, 0.12)'
           }}
         >
           <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '20px', margin: 0, padding: 0 }}>

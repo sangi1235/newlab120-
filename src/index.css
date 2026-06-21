@@ -15,11 +15,15 @@
   --primary-dark: #89616b;
   --accent: #d49a6a;
   
+  --bg-body: #fcfbfa;
+  --bg-body-gradient: radial-gradient(circle at top left, rgba(249, 184, 200, 0.15), transparent 24%), radial-gradient(circle at bottom right, rgba(212, 154, 106, 0.12), transparent 22%);
   --bg-main: #fcfbfa;
   --bg-surface: #ffffff;
-  --bg-glass: rgba(255, 255, 255, 0.75);
+  --bg-glass: rgba(255, 255, 255, 0.9);
+  --glass-header: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.78) 100%);
+  --glass-footer: rgba(255, 255, 255, 0.82);
   --border-color: #f4eef0;
-  --border-light: rgba(255, 255, 255, 0.5);
+  --border-light: rgba(255, 255, 255, 0.55);
   
   --text-main: #181113;
   --text-muted: #6e585d;
@@ -45,11 +49,15 @@
 
 [data-theme="dark"] {
   /* Colors (Dark Theme Override) */
+  --bg-body: #0c0809;
+  --bg-body-gradient: radial-gradient(circle at top left, rgba(249, 184, 200, 0.08), transparent 18%), radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.08), transparent 22%);
   --bg-main: #0c0809;
-  --bg-surface: #171113;
-  --bg-glass: rgba(23, 17, 19, 0.75);
-  --border-color: #2b1f22;
-  --border-light: rgba(255, 255, 255, 0.05);
+  --bg-surface: rgba(22, 15, 20, 0.92);
+  --bg-glass: rgba(20, 14, 18, 0.72);
+  --glass-header: linear-gradient(180deg, rgba(24, 19, 24, 0.95) 0%, rgba(18, 12, 18, 0.78) 100%);
+  --glass-footer: rgba(18, 12, 18, 0.82);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.12);
 
   --text-main: #fbf9fa;
   --text-muted: #bda2a7;
@@ -80,10 +88,37 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-main);
+  background-color: var(--bg-body);
+  background-image: var(--bg-body-gradient);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--text-main);
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+/* Layout Helpers */
+.glass-header {
+  background: var(--glass-header);
+  border-bottom: 1px solid var(--border-light);
+  backdrop-filter: blur(22px) saturate(150%);
+  -webkit-backdrop-filter: blur(22px) saturate(150%);
+}
+
+.glass-footer {
+  margin-top: 4rem;
+  background: var(--glass-footer);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-light);
+}
+
+.glass-panel, .glass-card {
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), background-color var(--transition-smooth);
+}
+
+.glass-panel:hover, .glass-card:hover {
+  transform: translateY(-2px);
 }
 
 /* Typography Custom Styles */

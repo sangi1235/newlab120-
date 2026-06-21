@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Check, Tag } from 'lucide-react';
+import { Trash2, Plus, Minus, ShoppingBag, ArrowRight, Tag } from 'lucide-react';
 
 export const Cart: React.FC = () => {
   const { 
@@ -98,7 +98,7 @@ export const Cart: React.FC = () => {
         
         {/* Left Side: Cart Items List */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          {cart.map((item, index) => {
+          {cart.map((item) => {
             const itemKey = `${item.product.id}-${item.selectedSize}-${item.selectedColor}`;
             return (
               <div 
